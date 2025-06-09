@@ -1,33 +1,45 @@
-const itens = []
-function addItem(item) {
-    const itemName = document.querySelector('#itemName').value
+const items = [];
+function addItem() {
+    const itemName = document.querySelector('#itemName').value;
 
     const item = {
         name: itemName,
         checked: false
-    }
-    itens.push(item)
+    };
+    items.push(item);
 
-    document.querySelector('#item').value = ''
+    document.querySelector('#itemName').value = '';
 }
+
 function showItemsList() {
-    const sectionlist = document.querySelector(".list")
-    itens.map((item, index) => {
-       sectionlist.innerHTML += `
+    const sectionlist = document.querySelector(".list");
+    sectionlist.textContent = "";
+
+    items.map((item, index) => {
+        sectionlist.innerHTML += `
         <div class="item">
-        <div>
-        <input type="checkbox" name="list" id= 'item-${index}' >
-
-        <div class = "custom-checkbox">
-         <img src="./assets/assets/checked.svg" alt="checked">
+            <div>
+                <input type="checkbox" name="list" id='item-${index}' >
+                <div class="custom-checkbox">
+                    <img src="./assets/assets/checked.svg" alt="checked">
+                </div>
+                <label for="item-${index}">${item.name}</label>
+            </div>
+            <button onclick="removeItem('${item.name}')">
+                <img src="./assets/assets/trash-icon.svg" alt="trash icon">
+            </button>
         </div>
-        <label for="item-${index}">${item.name}</label>
-        </div>
+        `;
+    });
+}
 
-        <button>
-        <img src="./assets/assets/trash-icon.svg" alt="trash icon">
-        </button>
-        </div>
-    })
+function removeItem(itemName) {
+    const itemIndex = items.findIndex(item => item.name === itemName);
+    console.log(itemIndex);
+    if (itemIndex > -1) {
+        items.splice(itemIndex, 1);
+    }   
+    showItemsList();
+    
 
-    }
+}
