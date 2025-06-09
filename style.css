@@ -151,7 +151,18 @@ main {
                 }
                 label {
                     text-decoration: line-through;
-                    color: var(--content-tertiary);
+                }
+            }
+            butto{
+                display: flex;
+                border: none;
+                background: none;
+                align-items: center;
+                cursor: pointer;
+
+                img {
+                    width: 2.4rem;
+                    opacity: .7;
                 }
             }
 
