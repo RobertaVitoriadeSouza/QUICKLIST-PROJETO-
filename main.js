@@ -35,11 +35,19 @@ function showItemsList() {
 
 function removeItem(itemName) {
     const itemIndex = items.findIndex(item => item.name === itemName);
-    console.log(itemIndex);
+    const divwarning = document.querySelector('.warning');
+
+    divwarning.classList.remove('hide-warning');
+
+    setTimeout(() => {
+        divwarning.classList.add('hide-warning');
+    }, 4000);
+
+    
     if (itemIndex > -1) {
         items.splice(itemIndex, 1);
     }   
     showItemsList();
-    
+
 
 }
