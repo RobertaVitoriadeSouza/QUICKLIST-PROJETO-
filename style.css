@@ -86,6 +86,25 @@ main {
         &:hover {
             border: 2px solid var(--border-hover);
         }
+        &:focus {
+            border: 2px solid var(--color-brand);
+        }
+    }
+    button {
+        width: 100%;
+        padding: 1rem 2.4rem;
+        border: none;
+        background: var(--color-brand);
+        color: var(--always-white);
+        font-size: 1.6rem;
+        line-height: 2rem;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 1.2rem;
+        
+        &:hover {
+            background: var(--color-brand-hover);
+        }
     }
 }
     
