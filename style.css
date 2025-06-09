@@ -168,18 +168,38 @@ main {
 
             }
         }
- .warning {
-    background: var(--color-danger);
-    color: var(--always-white);
-    padding: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 1.2rem;
-    margin-top: 2.4rem;
+        .warning {
+            background: var(--color-danger);
+            color: var(--always-white);
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 1.2rem;
+            margin-top: 2.4rem;
 
     opacity: 1;
     transition: opacity .4s ease, transform .4s ease;
     transform: translate(0);
+
+    div{
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+    }
+
+    i {
+        font-size: 2rem;
+    }
+    button {
+        border: none;
+        background: none;
+        color: var(--always-white);
+        cursor: pointer;
+    }
  }
-  
+
+.hide-warning {
+    opacity: 0;
+    transform: translateY(-10px);
+}
