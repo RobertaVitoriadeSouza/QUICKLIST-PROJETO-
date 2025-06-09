@@ -129,7 +129,31 @@ main {
 
            
             }
-        }
-    }
+            input {
+                display: 1.6rem ;
+            
+            }
+            .custom-checkbox {
+                width: 1.6rem;
+                height: 1.6rem;
+                border-radius: .6rem;
+                border: 1px solid var(--border-primary);
+                cursor: pointer;
+            }
+            label{
+                cursor: pointer ;
+            }
+            div:has(input:checked) {
+                .custom-checkbox {
+                    background: var(--color-brand);
+                    border: 1px solid var(--color-brand);
+                    transition: background .2s ease;
+                }
+                label {
+                    text-decoration: line-through;
+                    color: var(--content-tertiary);
+                }
+            }
 
-    
+            }
+        }
