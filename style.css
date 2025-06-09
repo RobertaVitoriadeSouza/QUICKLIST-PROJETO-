@@ -1,12 +1,13 @@
-* {
-    margin: 0;
+*{
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: "inter", sans-serif;
 }
 
 :root {
     font-size: 62.5%;
+
     --background-primary: #F4F5FB;
     --background-secondary: #FFF;
     --color-brand: #CA3884;
@@ -21,12 +22,12 @@
 }
 
 body {
-    background: var(--background-primary);
+    font-size: 1.6rem;
     padding: 3.2rem;
-    font-size: 65.5%;
+    background-color: var(--background-primary);
 }
 
-header{
+header {
     margin-bottom: 4.4rem;
     max-width: 62.7rem;
     margin-inline: auto;
@@ -34,48 +35,46 @@ header{
     flex-direction: column;
     align-items: start;
 
-    img {
-        width: 15.4%;
-        margin-inline: auto;
-        margin-bottom: 3rem;
-
+    img{
+     width: 15.4rem;
+     margin-inline: auto;
+     margin-bottom: 3rem;
     }
+
     button {
         border: none;
         background: none;
         font-size: 1.4rem;
-        color: var(--color-brand);
         line-height: 1.6rem;
         font-weight: 500;
         margin-bottom: 1.6rem;
-        cursor: pointer;
-    }
-
-    h1 {
+        color: var(--color-brand);
+        cursor:pointer; 
+     }
+    
+     h1 {
         font-size: 2.4rem;
+        color:var(--background-primary) ;
         line-height: 3.2rem;
-        color: var(--content-primary);
-        
-    }
-
+     }
 }
 
 main {
     max-width: 62.7rem;
     margin-inline: auto;
-    
 }
-
 
 .add-item {
     margin-bottom: 4rem;
-
-    input {
+   
+    input{
         width: 100%;
         padding: 1.2rem;
-        border: 2px solid var(--border-primary);
+        border: 2pox solid var(--border-primary);
+        border-radius: 0.8rem;
+        background-color: var(--background-primary);
         border-radius: 1.2rem;
-        font-size: 1.6rem;
+        margin-bottom: 1.6rem;
         outline: none;
         color: var(--content-primary);
 
@@ -86,143 +85,151 @@ main {
         &:hover {
             border: 2px solid var(--border-hover);
         }
+
         &:focus {
             border: 2px solid var(--color-brand);
         }
+
     }
-    button {
-        width: 100%;
-        padding: 1rem 2.4rem;
-        border: none;
+        
+        button {
         background: var(--color-brand);
+        border:none;
         color: var(--always-white);
+        padding: 1.6rem;
         font-size: 1.6rem;
         line-height: 2rem;
+        border-radius: 1.2rem;
         font-weight: 600;
         cursor: pointer;
-        border-radius: 1.2rem;
-        
+
         &:hover {
             background: var(--color-brand-hover);
         }
     }
-}
+    }
+        .list {
+            .item{
+                background: var(--background-secondary);
+                padding: 1.2rem;
+                margin-bottom: 1.2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                font-weight: 500;
+                border-radius: 1.2rem;
+                box-shadow: 0 2px 6px rgba(8, 11, 18, 0.2);
 
-.list{
-    .item{
-        background: var(--background-secondary);
-        padding: 1.6rem 2.4rem;
-        margin-bottom: 1.2rem;
+                div {
+                    display: flex;
+                    gap: 1.2rem;
+                    align-items: center;
+                }
+
+                input{
+                    display: none;
+                }
+
+                .custon-checkbox{
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    border: 1px solid var(--border-primary);
+                    border-radius: 6rem;
+                    cursor: pointer;
+                }
+
+                label{
+                    cursor: pointer;
+                }
+
+                div:has(input:checked) {
+                    .custon-checkbox{
+                     background: var(--color-brand);
+                     border: 1px solid var(--color-brand);
+                     transition: background .2s ease;
+                    }
+                }
+                
+                label{
+                    text-decoration: line-through;
+         }
+
+                button{
+                    background: none;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+
+                    img{
+                        width: 1.6rem;
+                        opacity: .7;
+                    }
+                }
+      }  
+
+    }
+
+    .warning{
+        background: var(--color-danger);
+        padding: 1.2rem;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-        font-weight: 500;
+        justify-content: space-between;
         border-radius: 1.2rem;
-        box-shadow: 0 2px 6px rgba(8, 11, 18 ,0.2);
+        margin-top: 2.4rem;
+
+        opacity: 1;
+        transform: translateY(0);
+        opacity: .4s ease tranform .4s ease;
 
         div{
             display: flex;
             align-items: center;
-            gap: 1.2rem;
+            gap: .8rem;
 
-           
-            }
-            input {
-                display: 1.6rem ;
-            
-            }
-            .custom-checkbox {
-                width: 1.6rem;
-                height: 1.6rem;
-                border-radius: .6rem;
-                border: 1px solid var(--border-primary);
-                cursor: pointer;
-            }
-            label{
-                cursor: pointer ;
-            }
-            div:has(input:checked) {
-                .custom-checkbox {
-                    background: var(--color-brand);
-                    border: 1px solid var(--color-brand);
-                    transition: background .2s ease;
-                }
-                label {
-                    text-decoration: line-through;
-                }
-            }
-            butto{
-                display: flex;
-                border: none;
-                background: none;
-                align-items: center;
-                cursor: pointer;
-
-                img {
-                    width: 2.4rem;
-                    opacity: .7;
-                }
-            }
-
-            }
         }
-        .warning {
-            background: var(--color-danger);
+
+        i {
+            font-size: 2rem;
+        }
+
+        button{
+            border: none;
+            background: none;
             color: var(--always-white);
-            padding: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 1.2rem;
-            margin-top: 2.4rem;
-
-    opacity: 1;
-    transition: opacity .4s ease, transform .4s ease;
-    transform: translate(0);
-
-    div{
-        display: flex;
-        align-items: center;
-        gap: 1.2rem;
-    }
-
-    i {
-        font-size: 2rem;
-    }
-    button {
-        border: none;
-        background: none;
-        color: var(--always-white);
-        cursor: pointer;
-    }
- }
-
-.hide-warning {
-    opacity: 0;
-    transform: translateY(-10px);
-}
-
- @media(min-width: 627px) {
-    header {
-        img {
-            margin-bottom: 6.4rem; ;
-   
+            cursor: pointer;
         }
-    } 
-    .add-item {
-        display: grid;
-        grid-template-columns: repeat(10,1fr);
-        gap: 1.2rem;
 
-        input {
-            margin-top: 0;
-            grid-column: 1 / 8;
-        }
-        button {
-            grid-column: 8 / 11;
-        }
     }
-}
-    
+
+    .hide-warning{
+        opacity: 0;
+        transform: translateY(-10px);
+
+    }
+
+    @media(min-width: 627px) {
+        header{
+            img{
+                margin-bottom: 6.4rem;
+            }
+        }
+
+        .add-item{
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+
+            input{
+                margin-bottom: 0;
+                grid-column: 1 / 8;
+            }
+
+            button {
+                grid-column: 8 / 11;
+            }
+        }
+
+    }

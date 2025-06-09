@@ -43,11 +43,14 @@ function removeItem(itemName) {
         divwarning.classList.add('hide-warning');
     }, 4000);
 
-    
+
     if (itemIndex > -1) {
         items.splice(itemIndex, 1);
     }   
     showItemsList();
 
 
+}
+ function addideWarningClass() {
+    document.querySelector('.warning').classList.add('hide-warning');
 }
