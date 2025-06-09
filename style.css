@@ -39,4 +39,14 @@ header {
         margin-inline: auto;
         margin-bottom: 3rem;
     }
+    button {
+        
+        background: none;
+        color: var(--color-brand);
+        border: none;
+        font-weight: 500;
+        cursor: pointer;
+       margin-bottom: 1.6rem;
+       line-height: 1.6rem;
+    }
 }
