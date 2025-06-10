@@ -1,4 +1,4 @@
-const items = [];
+let items = [];
 function addItem() {
     const itemName = document.querySelector('#itemName').value;
 
@@ -14,6 +14,8 @@ function addItem() {
 function showItemsList() {
     const sectionlist = document.querySelector(".list");
     sectionlist.textContent = "";
+
+items.sort((itemA, itemB) => Number (itemA.checked) - Number(itemB.checked));
 
     items.map((item, index) => {
         sectionlist.innerHTML += `
