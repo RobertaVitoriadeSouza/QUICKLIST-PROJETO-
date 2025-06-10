@@ -2,7 +2,7 @@ const items = [];
 function addItem() {
     const itemName = document.querySelector('#itemName').value;
 
-    const item = {
+    let item = {
         name: itemName,
         checked: false
     };
@@ -31,6 +31,8 @@ function showItemsList() {
         </div>
         `;
     });
+
+    localStorage.setItem('items', JSON.stringify(items));
 }
 
 function removeItem(itemName) {
@@ -59,3 +61,12 @@ function checkItem(itemName) {
     item.checked = !item.checked;
     showItemsList();
 }
+
+function verifyLocalStorageItems() {
+    const localStoredItems = localStorage.getItem('items');
+    if (localStoredItems) {
+        items = JSON.parse(localStoredItems);
+        showItemsList();
+    }
+}
+verifyLocalStorageItems();
