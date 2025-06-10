@@ -1,14 +1,18 @@
 let items = [];
 function addItem() {
-    const itemName = document.querySelector('#itemName').value;
+    const itemName = document.querySelector('#item').value;
+    if (itemName === '') {
+        alert('Digite um item válido!');
+        return; 
+    }
 
-    let item = {
+    const item = {
         name: itemName,
         checked: false
     };
     items.push(item);
 
-    document.querySelector('#itemName').value = '';
+    document.querySelector('#item').value = '';
 }
 
 function showItemsList() {
